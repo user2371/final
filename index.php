@@ -65,6 +65,7 @@ if (isset($_GET['download']) and $_GET['download'] == 'true') {
 				display: block;
 				visibility: hidden;
 				opacity: 0;
+				transition: all 0.5s ease-in;
 			}
 
 			.dropdown-menu>li:hover .custom-sub-menu {
@@ -77,16 +78,22 @@ if (isset($_GET['download']) and $_GET['download'] == 'true') {
 			}
 
 			.dropdown-menu-item:has(.custom-sub-menu):after {
-				position: absolute;				
+				position: absolute;
 				content: "";
 				border-right: 2px solid #444444;
 				border-bottom: 2px solid #444444;
-				top: 50%;
+				top: calc(50% - 3px);
 				right: 5px;
 				width: 10px;
 				height: 10px;
-				transform: rotate(-45deg) translateY(-50%);
+				transform: rotate(-45deg);
+				transition: all 0.5s ease-in;
 			}
+
+			.dropdown-menu-item:hover:after {
+				transform: rotate(45deg);
+			}
+
 
 			/* my custom styles end */
 		</style>
