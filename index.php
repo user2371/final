@@ -94,7 +94,132 @@ if (isset($_GET['download']) and $_GET['download'] == 'true') {
 				transform: rotate(45deg);
 			}
 
+			.cabinet {
+				position: relative;
+			}
 
+			/* form popup styles start  */
+
+			.cabinet {
+				position: relative;
+			}
+
+			.cabinet-form-widget {
+				position: absolute;
+				top: 29px;
+				left: -25px;
+				visibility: visible;
+				z-index: 9999;
+				width: 360px;
+				margin-left: 37px;
+				margin-top: 22px;
+				padding: 35px 20px 20px 23px;
+				padding-top: 10px;
+				opacity: 0;
+				left: -600px;
+				font-size: 15px;
+				color: #a1a7ad;
+				border-radius: 5px;
+				box-shadow: 0px 0px 5px 1px #ebecf5;
+				border: 1px solid #ebecf5;
+				background: #fff;
+				transition: all 0.7s ease-in-out;
+			}
+
+			.cabinet:hover .cabinet-form-widget {
+				visibility: visible;
+				opacity: 1;
+				left: -25px;
+			}
+
+			.form-title {
+				font-size: 16px;
+				font-weight: 400;
+				color: #3597e5;
+				margin-top: 16px;
+				margin-bottom: 27px;
+			}
+
+			.form-title span {
+				border-bottom: 2px dashed;
+				padding-bottom: 3px;
+				font-weight: 600;
+			}
+
+			.form-row {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				align-items: baseline;
+				margin-bottom: 15px;
+			}
+
+			.placeholder-field {
+				margin-bottom: 20px;
+			}
+
+			.cabinet-form-widget label {
+				display: inline-block;
+				font-weight: 400;
+				color: black;
+				opacity: 0.6;
+			}
+
+			.cabinet-form-widget input[type="text"] {
+				width: 206px;
+				border-radius: 10px;
+				padding: 10px 10px 10px 15px;
+				border: 1px solid #ebecf5;
+				box-shadow: 0px 0px 1px 1px #ebecf5;
+				line-height: 16px;
+			}
+
+			.cabinet-form-widget input::placeholder {
+				color: black;
+				font-weight: 400;
+				font-size: 14px;
+				letter-spacing: 1px;
+			}
+
+			.form-row.custom-checkbox {
+				display: block;
+			}
+
+			.custom-checkbox label {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+			}
+
+			.cabinet-form-widget input[type="checkbox"] {
+				display: none;
+			}
+
+			.custom-checkbox span {
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				margin-right: 10px;
+				border-radius: 4px;
+				background: white;
+				vertical-align: middle;
+				position: relative;
+				cursor: pointer;
+				border: 1px solid #ebecf5;
+				box-shadow: 0px 0px 1px 1px #ebecf5;
+			}
+
+			.custom-checkbox input:checked+span::after {
+				content: "";
+				position: absolute;
+				left: 5px;
+				top: 1px;
+				width: 6px;
+				height: 12px;
+				border: solid black;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+			}
+
+			/* form popup styles end  */
 			/* my custom styles end */
 		</style>
 	</head>
@@ -137,7 +262,38 @@ if (isset($_GET['download']) and $_GET['download'] == 'true') {
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Кабінет</a></li>
+						<li class="cabinet"><a href="#">Кабінет</a>
+
+							<!--  Попап форма start-->
+							<div class="cabinet-form-widget">
+								<form>
+									<h3 class="form-title"><span>First Name</span> Settings</h3>
+
+									<div class="form-row">
+										<label for="widget-name">Label</label>
+										<input type="text" id="widget-name" placeholder="First Name">
+									</div>
+
+									<div class="form-row placeholder-field">
+										<label for="widget-placeholder">Placeholder</label>
+										<input type="text" id="widget-placeholder">
+									</div>
+
+									<div class="form-row custom-checkbox">
+										<label>
+											<div>Required</div>
+											<div>
+												<input type="checkbox">
+												<span></span>
+											</div>
+
+										</label>
+									</div>
+								</form>
+							</div>
+							<!--Попап форма end -->
+
+						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">Категорії <span class="caret"></span></a>
