@@ -47,6 +47,11 @@ if (isset($_GET['download']) and $_GET['download'] == 'true') {
 			}
 
 			/* basic task styles end */
+			/* my custom styles start*/
+			.dropdown.open .caret{
+				transform: rotate(180deg);
+			}
+			/* my custom styles end */
 		</style>
 	</head>
 
